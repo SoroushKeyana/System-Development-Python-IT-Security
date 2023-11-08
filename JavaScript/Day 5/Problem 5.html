@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Stopwatch</title>
+    <style>.clock{
+        padding: 75px 40px;
+        border: 3px solid black
+     }
+        
+    </style>
+</head>
+<body class="">
+    <div class="container my-5">
+    <div class="d-flex justify-content-center d-flex justify-content-center align-items-center">
+        <div id='time' class="clock border-primary rounded-circle display-3">00:00</div>
+    </div>
+    <div class="d-flex justify-content-center my-2">
+        <button id="startBtn" class="btn btn-success justify-content-center m-1 btn-lg">Start</button>
+        <button id="stopBtn" class="btn btn-danger t-center m-1 btn-lg">stop</button>
+    </div>
+    </div>
+
+    <script>
+    window.onload = function () {
+        stopWatch();
+    }
+    
+    function stopWatch() {
+        let time;
+        let intervalId;
+        let startBtn = document.getElementById("startBtn");
+        let stopBtn = document.getElementById("stopBtn");
+ 
+        startBtn.addEventListener("click", function () {
+            time = -1;
+            incrementTime();
+            intervalId = setInterval(incrementTime, 1000);
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+        });
+ 
+        stopBtn.addEventListener("click", function () {
+            clearInterval(intervalId);
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+        });
+ 
+        function incrementTime() {
+            time++;
+            document.getElementById("time").textContent =
+                    ("0" + Math.trunc(time / 60)).slice(-2) +
+                    ":" + ("0" + (time % 60)).slice(-2);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+/*color variables*/
+:root{
+    --primary: #6f1d1b;
+    --active: #006d77;
+    --webcolor: #ccc5b9;
+    --navbar: rgba(255, 255, 255, 0.5);
+    --navDarker: rgba(255, 255, 255, 0.8);
+}
+body{
+    background-color: var(--webcolor);
+}
+/*navbar*/
+.navbar{
+    background-color: var(--navbar)
+}
+.nav-link{
+    color: var(--primary);
+    font-weight: bold;
+}
+.nav-link:hover{
+    text-decoration: underline;
+}
+.nav-darker{
+    background-color: var(--navDarker);
+}
+.active{
+    color: var(--active) !important;
+}
+/*order button*/
+.btn-danger{
+    background-color: var(--primary);
+    border: none;
+}
+.extra-large {
+  padding: 1.5rem 3rem; 
+  font-size: 1.5rem; 
+}
+/*images row*/
+.box1{
+    background-image: url(images/Circus\ 1.png);
+    background-size: cover;
+} 
+.box2{
+    background-image: url(images/Circus\ 2.png);
+    background-size: cover;
+} 
+.box3{
+    background-image: url(images/Circus\ 3.png);
+    background-size: cover;
+}
+.box4{
+    background-image: url(images/Circus\ 4.png);
+    background-size: cover;
+}
+.image-box {
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.5s;
+  width: 30%; 
+  height: 330px;
+  border: 2px solid var(--primary)
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Adjust the background color and opacity as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.image-box:hover .image-content {
+  opacity: 0.7; /* Adjust the opacity as needed */
+}
+
+.image-box:hover .overlay {
+  opacity: 1;
+}
+/*clown manne*/
+.clown{
+    color: #432818;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.clown-box{
+  width: 30%; 
+  height: 330px;
+  border: 2px solid var(--primary)
+}
+.clown-text{
+    width: 65%;
+}
+/*footer*/
+footer{
+    background-color: var(--navbar);
+    color: var(--primary);
+    margin-top: 20vh;
+}
+/*social media icons*/
+.fa {
+    width: 60px;
+    padding: 15px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    }
+
+.fa:hover {
+    opacity: 0.7;
+    background-color: var(--active);
+}
+
+/*let make things responsive*/
+
+@media screen and (max-width: 1300px) {
+
+    .image-box, .clown-box, .clown-text{
+        width: 100% !important;
+        margin: 20px 0px;
+        display: block;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Show more</title>
+    <style>
+    #text{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Show more example</h1>
+        <section class="row">
+            <div class="col-7 p-5 bg-dark text-white rounded mr-1">
+                    <p>This is just the first part of the text.  
+                        <a href="#" id="readMore" onclick="more()" class=" link-info" type="button">Read more</a>
+                        <span id="text">This is the rest of the text. There is no meaning in these sentences so do not bother thinking about it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam unde fuga possimus necessitatibus ut tempora tenetur, repudiandae blanditiis suscipit minima dolores aliquam explicabo soluta quod quia ex! Voluptas, numquam? 
+                        <a href="#" id="readMore" onclick="less()" class="link-info"  type="button">Read less</a>
+                        </span>
+                        
+
+                    </p>
+            </div>
+            <div class="col-1"></div>
+        </section>
+    </div>
+    <script>
+        function more(){
+            document.querySelector('#text').style.display = 'inline-block';
+            document.querySelector('#readMore').style.display = 'none';
+        }
+        function less(){
+            document.querySelector('#text').style.display = 'none';
+            document.querySelector('#readMore').style.display = 'inline-block';
+        }
+    </script>
+</body>
+</html>

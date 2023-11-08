@@ -1,0 +1,19 @@
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  static distance(point1, point2) {
+    const dx = point1.x - point2.x;
+    const dy = point1.y - point2.y;
+
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+}
+
+// Example usage:
+const point1 = new Point(5, 5);
+const point2 = new Point(9, 8);
+const distance = Point.distance(point1, point2);
+console.log(`Distance between the two points: ${distance}`);
