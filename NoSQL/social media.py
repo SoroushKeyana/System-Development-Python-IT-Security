@@ -69,7 +69,6 @@ def unfollow_user(username, target_username):
         print("The user doesn't exist")
 
 #view uesr feeds
-# view user feeds
 def view_user_feed(username, target_username):
     user = user_collection.find_one({'username': username})
     posts = post_collection.find({'username': target_username})
@@ -81,10 +80,9 @@ def view_user_feed(username, target_username):
     else:
         print("You are not following this person.")
 
-
 #user_registration('someyehfaizi@gmail.com', 'Samya', '123')
 #user_log_in("Samya",'123')
 #user_post('Barsam', 'Stop carpet bombing Gaza!')
 #follow_user("Samya", "Barsam")
 
-view_user_feed("Samya", "Barsam")
+view_user_feed("Samya", "Erik") 
