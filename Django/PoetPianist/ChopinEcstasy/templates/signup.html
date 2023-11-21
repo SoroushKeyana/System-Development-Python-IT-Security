@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <div class="container mt-5 d-flex justify-content-center flex-column align-items-center">
+    <h2 class="text-center mb-4">Sign Up</h2>
+    <form method="post" action="{% url 'signup' %}" class="needs-validation p-4 rounded bg-light text-bg-light border w-50" novalidate>
+      {% csrf_token %}
+      <div class="mb-3 row">
+        <div class="col-md-3 text-end">
+          {{ form.username.label_tag }}
+        </div>
+        <div class="col-md-9">
+          {{ form.username }}
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-3 text-end">
+          {{ form.email.label_tag }}
+        </div>
+        <div class="col-md-9">
+          {{ form.email }}
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-3 text-end">
+          {{ form.password1.label_tag }}
+        </div>
+        <div class="col-md-9">
+          {{ form.password1 }}
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-3 text-end">
+          {{ form.password2.label_tag }}
+        </div>
+        <div class="col-md-9">
+          {{ form.password2 }}
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}
