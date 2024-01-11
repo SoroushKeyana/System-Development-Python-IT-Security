@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container">
+    <h2 class="bg-primary text-bg-danger my-2 p-3">Posts</h2>
+    {% for post in posts %}
+        <div class="bg-dark text-bg-dark p-3 my-3">
+            <h2>{{ post.title }}</h2> 
+            <p>{{ post.content }}</p>
+            <p><i>{{ post.author.username }}-{{ post.created_at }}</i></p>
+        </div>
+    {% endfor %}
+
+    <h2 class="bg-primary text-bg-primary my-2 p-3">Create a Post</h2>
+    <form method="post" action="{% url 'post_list' %}" class="form d-flex flex-column bg-danger-dark text-bg-dark p-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+    {% endblock %}
+</div>
