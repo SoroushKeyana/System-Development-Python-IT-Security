@@ -1,0 +1,11 @@
+# Ignore files containing secret keys and API keys
+*secret*
+*api_key*
+*.env
+*.key
+*.pem
+*.p12
+
+# Ignore specific Python file
+generate_certificate.py
+weather.py
