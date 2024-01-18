@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/33cbd050-281e-480e-ba97-c5eaa75fad7c/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/soroushdjangowebapp",
+    "appService.deploySubpath": "."
+}
