@@ -9,3 +9,6 @@
 # Ignore specific Python file
 generate_certificate.py
 weather.py
+
+
+Flask/weather/
